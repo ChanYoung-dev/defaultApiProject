@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="2"?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>호돌로그 API</title>
+<date>2022-09-17</date>
+</info>
+<chapter xml:id="_글_단건_조회">
+<title>글 단건 조회</title>
+<section xml:id="_요청">
+<title>요청</title>
+<programlisting language="http" linenumbering="unnumbered">GET /posts/1 HTTP/1.1
+Accept: application/json
+Host: api.chan.com</programlisting>
+<table frame="all" rowsep="1" colsep="1">
+<title>/posts/{postId}</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="50*"/>
+<colspec colname="col_2" colwidth="50*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Parameter</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>postId</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>게시물 ID</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="_응답">
+<title>응답</title>
+<programlisting language="http" linenumbering="unnumbered">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 44
+
+{"id":1,"title":"제목","content":"내용"}</programlisting>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="3">
+<colspec colname="col_1" colwidth="33.3333*"/>
+<colspec colname="col_2" colwidth="33.3333*"/>
+<colspec colname="col_3" colwidth="33.3334*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Path</entry>
+<entry align="left" valign="top">Type</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>id</literal></simpara></entry>
+<entry align="left" valign="top"><simpara><literal>Number</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>게시물 ID</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>title</literal></simpara></entry>
+<entry align="left" valign="top"><simpara><literal>String</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>제목</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>content</literal></simpara></entry>
+<entry align="left" valign="top"><simpara><literal>String</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>내용</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+</chapter>
+<chapter xml:id="_글_단건_조회_2">
+<title>글 단건 조회</title>
+<section xml:id="_요청_2">
+<title>요청</title>
+<programlisting language="http" linenumbering="unnumbered">POST /posts HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 56
+Host: api.chan.com
+
+{"title":"제목입니다","content":"내용입니다."}</programlisting>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="5">
+<colspec colname="col_1" colwidth="20*"/>
+<colspec colname="col_2" colwidth="20*"/>
+<colspec colname="col_3" colwidth="20*"/>
+<colspec colname="col_4" colwidth="20*"/>
+<colspec colname="col_5" colwidth="20*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Path</entry>
+<entry align="left" valign="top">Type</entry>
+<entry align="left" valign="top">Description</entry>
+<entry align="left" valign="top">Optional</entry>
+<entry align="left" valign="top">Constraint</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>title</simpara></entry>
+<entry align="left" valign="top"><simpara>String</simpara></entry>
+<entry align="left" valign="top"><simpara>제목</simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara>좋은 제목 입력바랍니다</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>content</simpara></entry>
+<entry align="left" valign="top"><simpara>String</simpara></entry>
+<entry align="left" valign="top"><simpara>내용</simpara></entry>
+<entry align="left" valign="top"><simpara>Y</simpara></entry>
+<entry align="left" valign="top"></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+<section xml:id="_응답_2">
+<title>응답</title>
+<programlisting language="http" linenumbering="unnumbered">HTTP/1.1 200 OK</programlisting>
+</section>
+</chapter>
+</book>

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH='/Users/gimchan-yeong/study/chanlog/chanlog/nodeenv-16/lib/node_modules'
+export NPM_CONFIG_PREFIX='/Users/gimchan-yeong/study/chanlog/chanlog/nodeenv-16'
+export npm_config_prefix='/Users/gimchan-yeong/study/chanlog/chanlog/nodeenv-16'
+exec 'nodeenv-16/bin/node' "$@"
